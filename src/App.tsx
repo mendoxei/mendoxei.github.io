@@ -1,20 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+
+import { Routes, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import RandomKanji from './RandomKanji'
+import Home from './Home'
 
 function App() {
   return (
-    <div className="App">
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
-      <a href="https://www.youtube.com/watch?v=oTy7rO4hEvU"
-      >Gametechnologie Introductieproject trailer: Noxium</a
-    >
-    <a href="https://www.youtube.com/watch?v=6C1cRpy4b44"
-      >FairRecKit demo/trailer</a
-    >
+    <div className='App'>
+      <h1>Hello World</h1>
+      <p>I'm hosted with GitHub Pages.</p>
+      <div>
+        <Link to='/'>Home </Link>
+        <Link to='/kanji'>Kanji</Link>
+      </div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/kanji' element={<RandomKanji />} />
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
