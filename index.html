@@ -4,297 +4,355 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>mendoxei</title>
-    <meta name="description" content="mendoxei" />
+    <meta
+      name="description"
+      content="mendoxei portfolio with a diegetic 1-bit Pomodoro cooking scene."
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <div class="page">
-      <div class="window" role="application" aria-label="Portfolio window">
-        <header class="titlebar">
-          <div class="titlebar__left">
-            <div class="icon" aria-hidden="true"></div>
-            <div class="title">mendoxei</div>
-          </div>
-          <div class="titlebar__right" aria-hidden="true">
-            <button class="winbtn" type="button" tabindex="-1">—</button>
-            <button class="winbtn" type="button" tabindex="-1">□</button>
-            <button class="winbtn winbtn--close" type="button" tabindex="-1">
-              ×
-            </button>
-          </div>
-        </header>
+    <div class="site-shell" data-portfolio-open="true" data-phase="idle">
+      <main class="world" aria-label="Pomodoro kitchen world">
+        <div class="world__backdrop" aria-hidden="true">
+          <div class="backdrop__halo"></div>
+          <div class="backdrop__scanlines"></div>
+          <div class="backdrop__stars"></div>
+        </div>
 
-        <!-- <nav class="menubar" aria-label="Primary">
-          <a class="menuitem" href="#home">Home</a>
+        <div class="world__overlay">
+          <section class="hud-card hud-card--intro">
+            <p class="eyebrow">mendoxei / kitchen loop</p>
+            <h1>Steakodoro</h1>
+            <p class="intro-copy">
+              Work sessions sear the current side. Breaks are your flip window.
+              Miss the flip and the same face keeps cooking until it goes from
+              proper to punished.
+            </p>
 
-           <div class="dropdown">
-            <a class="menuitem" href="#games" aria-haspopup="true">Games ▾</a>
-            <div class="dropdown__panel" role="menu" aria-label="Games menu">
-              <a role="menuitem" href="#games-featured">Featured</a>
-              <a role="menuitem" href="#games-jams">Game Jams</a>
-              <a role="menuitem" href="#games-tools">Tools & Tech</a>
-            </div>
-          </div> 
-
-          <div class="dropdown">
-            <a class="menuitem" href="#pixel-art" aria-haspopup="true"
-              >Pixel Art ▾</a
-            >
-            <div
-              class="dropdown__panel"
-              role="menu"
-              aria-label="Pixel art menu"
-            >
-              <a role="menuitem" href="#pixel-sprites">Sprites</a>
-              <a role="menuitem" href="#pixel-tiles">Tilesets</a>
-              <a role="menuitem" href="#pixel-ui">UI Bits</a>
-            </div>
-          </div>
-
-           <a class="menuitem" href="#about">About</a> 
-          <a class="menuitem" href="#contact">Contact</a>
-
-          <div class="menubar__spacer"></div>
-
-          <a class="menuitem menuitem--soft" href="https://github.com/yourname"
-            >GitHub</a
-          >
-          <a
-            class="menuitem menuitem--soft"
-            href="https://itch.io/profile/yourname"
-            >itch.io</a
-          >
-        </nav> -->
-
-        <div class="content" id="home">
-          <section class="hero">
-            <!-- <div class="avatar" aria-hidden="true"></div> -->
-            <img class="avatar" src="assets/avatar.png" alt="Portrait / logo" />
-
-            <div class="hero__text">
-              <h1>mendoxei</h1>
-              <p class="tagline">
-                <!-- I build games and tools. I like clean code, crunchy UI, and
-                strong art direction. -->
-              </p>
-
-              <!-- <div class="hero__buttons">
-                <a class="btn" href="#games-featured">View Games</a>
-                <a class="btn" href="#pixel-art">View Pixel Art</a>
-                <a class="btn btn--ghost" href="#contact">Contact</a>
-              </div> -->
-
-              <p class="fine">
-                Currently:
-                <span class="muted">Godot / Unity </span>
-              </p>
-            </div>
-          </section>
-
-          <hr class="rule" />
-
-          <section class="section" id="games">
-            <header class="section__head">
-              <h2 id="games-featured">Games</h2>
-              <div class="hint">
-                Coming soon!
-                <!-- Hover the menu bar for dropdowns (also works with keyboard
-                focus). -->
+            <div class="hud-card__actions">
+              <button
+                class="pixel-btn"
+                id="portfolioToggle"
+                type="button"
+                aria-expanded="true"
+              >
+                close portfolio window
+              </button>
+              <div class="appliance-chip" id="applianceLabel">
+                appliance: skillet
               </div>
-            </header>
-
-            <!-- <div class="grid">
-              <article class="card">
-                <div class="card__top">
-                  <h3>Pixel RTS Campaign</h3>
-                  <span class="badge">Godot</span>
-                </div>
-                <p>
-                  Single-player RTS inspired by classic sci-fi RTS pacing.
-                  Emphasis on clean architecture and tooling.
-                </p>
-                <div class="card__actions">
-                  <a
-                    class="btn btn--small"
-                    href="https://github.com/yourname/rts"
-                    >Repo</a
-                  >
-                  <a class="btn btn--small" href="#">Devlog</a>
-                </div>
-              </article>
-
-              <article class="card">
-                <div class="card__top">
-                  <h3>Dialogue UI System</h3>
-                  <span class="badge">UI</span>
-                </div>
-                <p>
-                  Visual-novel / Coffee Talk style dialogue with portraits,
-                  choices, and theming.
-                </p>
-                <div class="card__actions">
-                  <a
-                    class="btn btn--small"
-                    href="https://github.com/yourname/dialogue-ui"
-                    >Repo</a
-                  >
-                  <a class="btn btn--small" href="#">Demo</a>
-                </div>
-              </article>
-
-              <article class="card">
-                <div class="card__top">
-                  <h3>Hangul Stroke Game</h3>
-                  <span class="badge">Edu</span>
-                </div>
-                <p>
-                  Draw syllable blocks; system composes strokes from modular
-                  templates. Designed to be extensible.
-                </p>
-                <div class="card__actions">
-                  <a
-                    class="btn btn--small"
-                    href="https://github.com/yourname/hangul-game"
-                    >Repo</a
-                  >
-                  <a class="btn btn--small" href="#">Write-up</a>
-                </div>
-              </article>
-            </div> -->
-
-            <div class="subanchors" id="games-jams"></div>
-            <div class="subanchors" id="games-tools"></div>
+            </div>
           </section>
 
-          <hr class="rule" />
-
-          <section class="section" id="pixel-art">
-            <header class="section__head">
-              <h2>Pixel Art</h2>
-              <div class="hint">
-                <!-- Drop your pieces into these slots (images) later. -->
+          <section class="world__playfield" aria-label="Cooking scene">
+            <div class="scene-frame">
+              <div class="scene-frame__header">
+                <span>loop state</span>
+                <span id="phaseLabel">idle prep</span>
               </div>
-            </header>
 
-            <div class="thumbs">
-              <figure class="thumb" id="pixel-A">
-                <!-- <div class="thumb__img" aria-hidden="true"></div> -->
-                <img
-                  class="thumb__img"
-                  src="assets/pixel-A.png"
-                  alt="Sprite art"
-                  loading="lazy"
-                />
-
-                <figcaption></figcaption>
-              </figure>
-
-              <figure class="thumb" id="pixel-B">
-                <!-- <div class="thumb__img" aria-hidden="true"></div> -->
-                <img
-                  class="thumb__img"
-                  src="assets/pixel-B.png"
-                  alt="Sprite art"
-                  loading="lazy"
-                />
-                <figcaption></figcaption>
-              </figure>
-
-              <figure class="thumb" id="pixel-C">
-                <!-- <div class="thumb__img" aria-hidden="true"></div> -->
-                <img
-                  class="thumb__img"
-                  src="assets/pixel-C.png"
-                  alt="Sprite art"
-                  loading="lazy"
-                />
-                <figcaption></figcaption>
-              </figure>
-            </div>
-
-            <div class="note">
-              <!-- Tip: put images in an <code>assets/</code> folder and swap the
-              grey boxes for real thumbnails. -->
-            </div>
-          </section>
-
-          <hr class="rule" />
-
-          <!-- <section class="section" id="about">
-            <header class="section__head">
-              <h2>About</h2>
-            </header>
-
-            <div class="panel">
-              <p>
-                Short bio goes here. Mention what you like building, what you’re
-                aiming for, and what tools you use. Keep it punchy and “old
-                internet” readable.
-              </p>
-              <ul class="list">
-                <li>
-                  <span class="muted">Primary:</span> Godot, Unity, TypeScript,
-                  C#, Python
-                </li>
-                <li>
-                  <span class="muted">Interests:</span> UI-heavy games, tooling,
-                  pixel art, language-learning systems
-                </li>
-                <li>
-                  <span class="muted">Open to:</span> freelance / collabs /
-                  contract
-                </li>
-              </ul>
-            </div>
-          </section> -->
-
-          <hr class="rule" />
-
-          <section class="section" id="contact">
-            <header class="section__head">
-              <h2>Contact</h2>
-            </header>
-
-            <div class="panel">
-              <div class="contactrows">
-                <div class="contactrow">
-                  <div class="contactlabel">Email</div>
-                  <div class="contactvalue">
-                    <a class="link" href="mailto:lanle@hotmail.nl"
-                      >lanle@hotmail.nl</a
-                    >
+              <div class="scene-frame__body">
+                <div class="kitchen">
+                  <div class="kitchen__wall">
+                    <div class="wall-panel wall-panel--window">
+                      <div class="window-grid"></div>
+                    </div>
+                    <div class="wall-panel wall-panel--note">
+                      <span>close the dossier for full immersion</span>
+                    </div>
                   </div>
-                </div>
-                <div class="contactrow">
-                  <div class="contactlabel">Discord</div>
-                  <div class="contactvalue">
-                    <span class="muted">mendoxei</span>
-                  </div>
-                </div>
-                <div class="contactrow">
-                  <div class="contactlabel">Links</div>
-                  <div class="contactvalue">
-                    <a class="link" href="https://github.com/mendoxei"
-                      >GitHub</a
-                    >
-                    <span class="sep">•</span>
-                    <a class="link" href="https://itch.io/profile/mendoxei"
-                      >itch.io</a
-                    >
+
+                  <div class="countertop">
+                    <div class="stovetop" data-burner-state="idle">
+                      <div class="stovetop__burner"></div>
+                      <div class="stovetop__burner"></div>
+                      <div class="stovetop__grid"></div>
+                    </div>
+
+                    <div class="pan" id="panSprite" data-side="0">
+                      <div class="pan__handle"></div>
+                      <div class="pan__surface"></div>
+
+                      <button
+                        class="arm"
+                        id="armFlipButton"
+                        type="button"
+                        aria-label="Flip the steak during a break"
+                      >
+                        <span class="arm__palm"></span>
+                        <span class="arm__vein arm__vein--one"></span>
+                        <span class="arm__vein arm__vein--two"></span>
+                        <span class="arm__vein arm__vein--three"></span>
+                      </button>
+
+                      <div class="steak" id="steakSprite" data-state="raw">
+                        <span class="steak__marbling"></span>
+                        <span class="steak__char"></span>
+                      </div>
+                    </div>
+
+                    <div class="scene-meter">
+                      <div class="scene-meter__label">burner</div>
+                      <div class="scene-meter__track">
+                        <div class="scene-meter__fill" id="heatMeter"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="footer">
-                <span>© <span id="year">2026</span> mendoxei</span>
-                <span class="sep">•</span>
-                <span class="muted">Made for GitHub Pages</span>
+              <div class="scene-frame__footer" id="statusLine" aria-live="polite">
+                Prime the skillet and start when ready.
               </div>
             </div>
           </section>
+
+          <aside class="hud-card hud-card--controls">
+            <div class="timer-readout">
+              <div class="timer-readout__phase">phase</div>
+              <div class="timer-readout__time" id="timeDisplay">25:00</div>
+              <div class="timer-readout__caption" id="phaseCaption">
+                waiting for heat
+              </div>
+            </div>
+
+            <div class="progress-block">
+              <div class="progress-block__head">
+                <span>phase progress</span>
+                <span id="cycleCount">cycle 0</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-track__fill" id="phaseProgress"></div>
+              </div>
+            </div>
+
+            <div class="doneness-grid">
+              <article class="info-tile">
+                <span>side a</span>
+                <strong id="sideAState">raw</strong>
+              </article>
+              <article class="info-tile">
+                <span>side b</span>
+                <strong id="sideBState">raw</strong>
+              </article>
+              <article class="info-tile">
+                <span>visible face</span>
+                <strong id="visibleSide">a</strong>
+              </article>
+              <article class="info-tile">
+                <span>overall</span>
+                <strong id="overallState">uncooked</strong>
+              </article>
+            </div>
+
+            <div class="controls-stack">
+              <div class="control-row">
+                <button class="pixel-btn" id="startPauseButton" type="button">
+                  start session
+                </button>
+                <button
+                  class="pixel-btn pixel-btn--ghost"
+                  id="resetButton"
+                  type="button"
+                >
+                  reset
+                </button>
+              </div>
+
+              <div class="control-row control-row--single">
+                <button
+                  class="pixel-btn pixel-btn--accent"
+                  id="flipButton"
+                  type="button"
+                >
+                  flip during break
+                </button>
+              </div>
+            </div>
+
+            <div class="duration-panel" aria-label="Pomodoro settings">
+              <div class="duration-card">
+                <span>work</span>
+                <div class="stepper">
+                  <button type="button" data-adjust="work" data-delta="-1">
+                    -
+                  </button>
+                  <output id="workMinutesDisplay">25m</output>
+                  <button type="button" data-adjust="work" data-delta="1">
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <div class="duration-card">
+                <span>break</span>
+                <div class="stepper">
+                  <button type="button" data-adjust="break" data-delta="-1">
+                    -
+                  </button>
+                  <output id="breakMinutesDisplay">5m</output>
+                  <button type="button" data-adjust="break" data-delta="1">
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="future-note">
+              The timer engine is appliance-based, so a slow cooker variant can
+              be added without rewriting the session flow.
+            </div>
+          </aside>
+        </div>
+      </main>
+
+      <div class="page">
+        <div
+          class="window portfolio-window"
+          role="application"
+          aria-label="Portfolio window"
+        >
+          <header class="titlebar">
+            <div class="titlebar__left">
+              <div class="icon" aria-hidden="true"></div>
+              <div class="title">mendoxei.exe</div>
+            </div>
+            <div class="titlebar__right" aria-hidden="true">
+              <button class="winbtn" type="button" tabindex="-1">_</button>
+              <button class="winbtn" type="button" tabindex="-1">[]</button>
+              <button
+                class="winbtn winbtn--close"
+                id="portfolioClose"
+                type="button"
+                aria-label="Close portfolio window"
+              >
+                x
+              </button>
+            </div>
+          </header>
+
+          <div class="content" id="home">
+            <section class="hero">
+              <div class="avatar" aria-hidden="true">
+                <div class="avatar__face"></div>
+              </div>
+
+              <div class="hero__text">
+                <div class="hero__badge">portfolio dossier</div>
+                <h2>mendoxei</h2>
+                <p class="tagline">
+                  Games, pixel art, interfaces, and systems with a little grime
+                  on them.
+                </p>
+                <p class="fine">
+                  Currently:
+                  <span class="muted"
+                    >Godot / Unity / interfaces that feel like places</span
+                  >
+                </p>
+                <p class="hero__hint">
+                  Close this window and the site turns into the timer world.
+                </p>
+              </div>
+            </section>
+
+            <hr class="rule" />
+
+            <section class="section" id="games">
+              <header class="section__head">
+                <h3 id="games-featured">Games</h3>
+                <div class="hint">Coming soon.</div>
+              </header>
+
+              <div class="subanchors" id="games-jams"></div>
+              <div class="subanchors" id="games-tools"></div>
+            </section>
+
+            <hr class="rule" />
+
+            <section class="section" id="pixel-art">
+              <header class="section__head">
+                <h3>Pixel Art</h3>
+                <div class="hint">Selected pieces.</div>
+              </header>
+
+              <div class="thumbs">
+                <figure class="thumb" id="pixel-A">
+                  <div
+                    class="thumb__img thumb__img--glyph"
+                    aria-hidden="true"
+                  ></div>
+                  <figcaption>sprite studies</figcaption>
+                </figure>
+
+                <figure class="thumb" id="pixel-B">
+                  <div
+                    class="thumb__img thumb__img--tile"
+                    aria-hidden="true"
+                  ></div>
+                  <figcaption>tiles and environments</figcaption>
+                </figure>
+
+                <figure class="thumb" id="pixel-C">
+                  <div
+                    class="thumb__img thumb__img--ui"
+                    aria-hidden="true"
+                  ></div>
+                  <figcaption>ui fragments</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <hr class="rule" />
+
+            <section class="section" id="contact">
+              <header class="section__head">
+                <h3>Contact</h3>
+              </header>
+
+              <div class="panel">
+                <div class="contactrows">
+                  <div class="contactrow">
+                    <div class="contactlabel">Email</div>
+                    <div class="contactvalue">
+                      <a class="link" href="mailto:lanle@hotmail.nl"
+                        >lanle@hotmail.nl</a
+                      >
+                    </div>
+                  </div>
+                  <div class="contactrow">
+                    <div class="contactlabel">Discord</div>
+                    <div class="contactvalue">
+                      <span class="muted">mendoxei</span>
+                    </div>
+                  </div>
+                  <div class="contactrow">
+                    <div class="contactlabel">Links</div>
+                    <div class="contactvalue">
+                      <a class="link" href="https://github.com/mendoxei"
+                        >GitHub</a
+                      >
+                      <span class="sep">*</span>
+                      <a class="link" href="https://itch.io/profile/mendoxei"
+                        >itch.io</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footer">
+                  <span>© <span id="year">2026</span> mendoxei</span>
+                  <span class="sep">*</span>
+                  <span class="muted">static site / low-load world layer</span>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
