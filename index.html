@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>mendoxei</title>
+    <meta name="description" content="mendoxei" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="window" role="application" aria-label="Portfolio window">
+        <header class="titlebar">
+          <div class="titlebar__left">
+            <div class="icon" aria-hidden="true"></div>
+            <div class="title">mendoxei</div>
+          </div>
+          <div class="titlebar__right" aria-hidden="true">
+            <button class="winbtn" type="button" tabindex="-1">—</button>
+            <button class="winbtn" type="button" tabindex="-1">□</button>
+            <button class="winbtn winbtn--close" type="button" tabindex="-1">
+              ×
+            </button>
+          </div>
+        </header>
+
+        <!-- <nav class="menubar" aria-label="Primary">
+          <a class="menuitem" href="#home">Home</a>
+
+           <div class="dropdown">
+            <a class="menuitem" href="#games" aria-haspopup="true">Games ▾</a>
+            <div class="dropdown__panel" role="menu" aria-label="Games menu">
+              <a role="menuitem" href="#games-featured">Featured</a>
+              <a role="menuitem" href="#games-jams">Game Jams</a>
+              <a role="menuitem" href="#games-tools">Tools & Tech</a>
+            </div>
+          </div> 
+
+          <div class="dropdown">
+            <a class="menuitem" href="#pixel-art" aria-haspopup="true"
+              >Pixel Art ▾</a
+            >
+            <div
+              class="dropdown__panel"
+              role="menu"
+              aria-label="Pixel art menu"
+            >
+              <a role="menuitem" href="#pixel-sprites">Sprites</a>
+              <a role="menuitem" href="#pixel-tiles">Tilesets</a>
+              <a role="menuitem" href="#pixel-ui">UI Bits</a>
+            </div>
+          </div>
+
+           <a class="menuitem" href="#about">About</a> 
+          <a class="menuitem" href="#contact">Contact</a>
+
+          <div class="menubar__spacer"></div>
+
+          <a class="menuitem menuitem--soft" href="https://github.com/yourname"
+            >GitHub</a
+          >
+          <a
+            class="menuitem menuitem--soft"
+            href="https://itch.io/profile/yourname"
+            >itch.io</a
+          >
+        </nav> -->
+
+        <div class="content" id="home">
+          <section class="hero">
+            <!-- <div class="avatar" aria-hidden="true"></div> -->
+            <img
+              class="avatar"
+              src="assets/portrait.jpg"
+              alt="Portrait / logo"
+            />
+
+            <div class="hero__text">
+              <h1>mendoxei</h1>
+              <p class="tagline">
+                <!-- I build games and tools. I like clean code, crunchy UI, and
+                strong art direction. -->
+              </p>
+
+              <!-- <div class="hero__buttons">
+                <a class="btn" href="#games-featured">View Games</a>
+                <a class="btn" href="#pixel-art">View Pixel Art</a>
+                <a class="btn btn--ghost" href="#contact">Contact</a>
+              </div> -->
+
+              <p class="fine">
+                Currently:
+                <span class="muted">Godot / Unity </span>
+              </p>
+            </div>
+          </section>
+
+          <hr class="rule" />
+
+          <section class="section" id="games">
+            <header class="section__head">
+              <h2 id="games-featured">Games</h2>
+              <div class="hint">
+                Coming soon!
+                <!-- Hover the menu bar for dropdowns (also works with keyboard
+                focus). -->
+              </div>
+            </header>
+
+            <!-- <div class="grid">
+              <article class="card">
+                <div class="card__top">
+                  <h3>Pixel RTS Campaign</h3>
+                  <span class="badge">Godot</span>
+                </div>
+                <p>
+                  Single-player RTS inspired by classic sci-fi RTS pacing.
+                  Emphasis on clean architecture and tooling.
+                </p>
+                <div class="card__actions">
+                  <a
+                    class="btn btn--small"
+                    href="https://github.com/yourname/rts"
+                    >Repo</a
+                  >
+                  <a class="btn btn--small" href="#">Devlog</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__top">
+                  <h3>Dialogue UI System</h3>
+                  <span class="badge">UI</span>
+                </div>
+                <p>
+                  Visual-novel / Coffee Talk style dialogue with portraits,
+                  choices, and theming.
+                </p>
+                <div class="card__actions">
+                  <a
+                    class="btn btn--small"
+                    href="https://github.com/yourname/dialogue-ui"
+                    >Repo</a
+                  >
+                  <a class="btn btn--small" href="#">Demo</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__top">
+                  <h3>Hangul Stroke Game</h3>
+                  <span class="badge">Edu</span>
+                </div>
+                <p>
+                  Draw syllable blocks; system composes strokes from modular
+                  templates. Designed to be extensible.
+                </p>
+                <div class="card__actions">
+                  <a
+                    class="btn btn--small"
+                    href="https://github.com/yourname/hangul-game"
+                    >Repo</a
+                  >
+                  <a class="btn btn--small" href="#">Write-up</a>
+                </div>
+              </article>
+            </div> -->
+
+            <div class="subanchors" id="games-jams"></div>
+            <div class="subanchors" id="games-tools"></div>
+          </section>
+
+          <hr class="rule" />
+
+          <section class="section" id="pixel-art">
+            <header class="section__head">
+              <h2>Pixel Art</h2>
+              <div class="hint">
+                <!-- Drop your pieces into these slots (images) later. -->
+              </div>
+            </header>
+
+            <div class="thumbs">
+              <figure class="thumb" id="pixel-A">
+                <!-- <div class="thumb__img" aria-hidden="true"></div> -->
+                <img
+                  class="thumb__img"
+                  src="assets/drawing.png"
+                  alt="Sprite art"
+                  loading="lazy"
+                />
+
+                <figcaption></figcaption>
+              </figure>
+
+              <figure class="thumb" id="pixel-B">
+                <!-- <div class="thumb__img" aria-hidden="true"></div> -->
+                <img
+                  class="thumb__img"
+                  src="assets/h3ll.png"
+                  alt="Sprite art"
+                  loading="lazy"
+                />
+                <figcaption></figcaption>
+              </figure>
+
+              <figure class="thumb" id="pixel-C">
+                <!-- <div class="thumb__img" aria-hidden="true"></div> -->
+                <img
+                  class="thumb__img"
+                  src="assets/toil.png"
+                  alt="Sprite art"
+                  loading="lazy"
+                />
+                <figcaption></figcaption>
+              </figure>
+            </div>
+
+            <div class="note">
+              <!-- Tip: put images in an <code>assets/</code> folder and swap the
+              grey boxes for real thumbnails. -->
+            </div>
+          </section>
+
+          <hr class="rule" />
+
+          <!-- <section class="section" id="about">
+            <header class="section__head">
+              <h2>About</h2>
+            </header>
+
+            <div class="panel">
+              <p>
+                Short bio goes here. Mention what you like building, what you’re
+                aiming for, and what tools you use. Keep it punchy and “old
+                internet” readable.
+              </p>
+              <ul class="list">
+                <li>
+                  <span class="muted">Primary:</span> Godot, Unity, TypeScript,
+                  C#, Python
+                </li>
+                <li>
+                  <span class="muted">Interests:</span> UI-heavy games, tooling,
+                  pixel art, language-learning systems
+                </li>
+                <li>
+                  <span class="muted">Open to:</span> freelance / collabs /
+                  contract
+                </li>
+              </ul>
+            </div>
+          </section> -->
+
+          <hr class="rule" />
+
+          <section class="section" id="contact">
+            <header class="section__head">
+              <h2>Contact</h2>
+            </header>
+
+            <div class="panel">
+              <div class="contactrows">
+                <div class="contactrow">
+                  <div class="contactlabel">Email</div>
+                  <div class="contactvalue">
+                    <a class="link" href="mailto:lanle@hotmail.nl"
+                      >lanle@hotmail.nl</a
+                    >
+                  </div>
+                </div>
+                <div class="contactrow">
+                  <div class="contactlabel">Discord</div>
+                  <div class="contactvalue">
+                    <span class="muted">mendoxei</span>
+                  </div>
+                </div>
+                <div class="contactrow">
+                  <div class="contactlabel">Links</div>
+                  <div class="contactvalue">
+                    <a class="link" href="https://github.com/mendoxei"
+                      >GitHub</a
+                    >
+                    <span class="sep">•</span>
+                    <a class="link" href="https://itch.io/profile/mendoxei"
+                      >itch.io</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer">
+                <span>© <span id="year">2026</span> mendoxei</span>
+                <span class="sep">•</span>
+                <span class="muted">Made for GitHub Pages</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
