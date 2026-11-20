@@ -4,8 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>mendoxei</title>
-    <meta name="description" content="mendoxei" />
+    <meta name="description" content="mendoxei: games, pixel art and photos" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="site.js" defer></script>
   </head>
 
   <body>
@@ -102,70 +103,120 @@
             <header class="section__head">
               <h2 id="games-featured">Games</h2>
               <div class="hint">
-                Coming soon!
-                <!-- Hover the menu bar for dropdowns (also works with keyboard
-                focus). -->
+                All games on
+                <a class="link" href="https://mendoxei.itch.io/">itch.io</a>
               </div>
             </header>
 
-            <!-- <div class="grid">
+            <div class="grid">
+              <!-- Encore Points card. Uncomment to show.
               <article class="card">
+                <img
+                  class="card__cover"
+                  src="assets/games/encore.png"
+                  alt="Encore Points: Skymarks screenshot"
+                  loading="lazy"
+                />
                 <div class="card__top">
-                  <h3>Pixel RTS Campaign</h3>
+                  <h3>Encore Points: Skymarks</h3>
                   <span class="badge">Godot</span>
                 </div>
                 <p>
-                  Single-player RTS inspired by classic sci-fi RTS pacing.
-                  Emphasis on clean architecture and tooling.
+                  An edutainment game to learn the night sky's landmarks.
+                  Relight the dimmed stars before the show is over. Made for
+                  Feedback Quest 9.
                 </p>
                 <div class="card__actions">
-                  <a
-                    class="btn btn--small"
-                    href="https://github.com/yourname/rts"
-                    >Repo</a
+                  <a class="btn btn--small" href="#play" data-play
+                    >Play in browser</a
                   >
-                  <a class="btn btn--small" href="#">Devlog</a>
+                  <a
+                    class="btn btn--small btn--ghost"
+                    href="https://mendoxei.itch.io/encore"
+                    >itch.io</a
+                  >
                 </div>
               </article>
+              -->
 
+              <!-- Gengotchi card. Uncomment to show.
               <article class="card">
+                <img
+                  class="card__cover"
+                  src="assets/games/gengotchi.png"
+                  alt="Gengotchi cover"
+                  loading="lazy"
+                />
                 <div class="card__top">
-                  <h3>Dialogue UI System</h3>
-                  <span class="badge">UI</span>
+                  <h3>Gengotchi</h3>
+                  <span class="badge">Unity</span>
                 </div>
                 <p>
-                  Visual-novel / Coffee Talk style dialogue with portraits,
-                  choices, and theming.
+                  Learn languages with your pet friend. Decorate its room by
+                  studying your favourite language. Made for Summer of GameDev
+                  "Retro Remix".
                 </p>
                 <div class="card__actions">
                   <a
-                    class="btn btn--small"
-                    href="https://github.com/yourname/dialogue-ui"
-                    >Repo</a
+                    class="btn btn--small btn--ghost"
+                    href="https://mendoxei.itch.io/gengotchi"
+                    >itch.io</a
                   >
-                  <a class="btn btn--small" href="#">Demo</a>
                 </div>
               </article>
+              -->
 
               <article class="card">
+                <img
+                  class="card__cover"
+                  src="assets/games/beepeem.png"
+                  alt="PROJECT BEEPEEM cover"
+                  loading="lazy"
+                />
                 <div class="card__top">
-                  <h3>Hangul Stroke Game</h3>
-                  <span class="badge">Edu</span>
+                  <h3>PROJECT BEEPEEM</h3>
+                  <span class="badge">Rhythm</span>
                 </div>
                 <p>
-                  Draw syllable blocks; system composes strokes from modular
-                  templates. Designed to be extensible.
+                  Gotta hit that target. Four beats to a bar. Made for Mini Jam
+                  218: Fire. Windows and Linux.
                 </p>
                 <div class="card__actions">
                   <a
-                    class="btn btn--small"
-                    href="https://github.com/yourname/hangul-game"
-                    >Repo</a
+                    class="btn btn--small btn--ghost"
+                    href="https://mendoxei.itch.io/project-beepeem"
+                    >itch.io</a
                   >
-                  <a class="btn btn--small" href="#">Write-up</a>
                 </div>
               </article>
-            </div> -->
+            </div>
+
+            <!-- Encore Points in-browser player. Uncomment together with its card.
+            <div class="player" id="play">
+              <div class="player__head">
+                <h3>Encore Points: Skymarks</h3>
+                <div class="hint">
+                  Left-click to shoot, right-click or Tab to zoom. Runs here
+                  through itch.io.
+                </div>
+              </div>
+              <div class="player__frame" id="player-frame">
+                <img
+                  class="player__poster"
+                  src="assets/games/encore.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <button
+                  class="btn player__start"
+                  type="button"
+                  id="player-start"
+                >
+                  Play Encore Points
+                </button>
+              </div>
+            </div>
+            -->
 
             <div class="subanchors" id="games-jams"></div>
             <div class="subanchors" id="games-tools"></div>
@@ -220,6 +271,56 @@
             <div class="note">
               <!-- Tip: put images in an <code>assets/</code> folder and swap the
               grey boxes for real thumbnails. -->
+            </div>
+          </section>
+
+          <hr class="rule" />
+
+          <section class="section" id="photos">
+            <header class="section__head">
+              <h2>Photos</h2>
+              <div class="hint">
+                More on
+                <a class="link" href="https://500px.com/p/mendoxei">500px</a>
+              </div>
+            </header>
+
+            <div class="thumbs">
+              <figure class="thumb thumb--photo">
+                <a href="https://500px.com/photo/wnY7zoh0IcV">
+                  <img
+                    class="thumb__img"
+                    src="assets/photos/3000833496.jpg"
+                    alt="Park plants in Utrecht"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption>Park plants in Utrecht</figcaption>
+              </figure>
+
+              <figure class="thumb thumb--photo">
+                <a href="https://500px.com/photo/HRAjebywtDu">
+                  <img
+                    class="thumb__img"
+                    src="assets/photos/3001161292.jpg"
+                    alt="Fyor"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption>Fyor</figcaption>
+              </figure>
+
+              <figure class="thumb thumb--photo">
+                <a href="https://500px.com/photo/rypjyRhvf4Q">
+                  <img
+                    class="thumb__img"
+                    src="assets/photos/3000833435.jpg"
+                    alt="Park"
+                    loading="lazy"
+                  />
+                </a>
+                <figcaption>Park</figcaption>
+              </figure>
             </div>
           </section>
 
@@ -283,8 +384,12 @@
                       >GitHub</a
                     >
                     <span class="sep">•</span>
-                    <a class="link" href="https://itch.io/profile/mendoxei"
+                    <a class="link" href="https://mendoxei.itch.io/"
                       >itch.io</a
+                    >
+                    <span class="sep">•</span>
+                    <a class="link" href="https://500px.com/p/mendoxei"
+                      >500px</a
                     >
                   </div>
                 </div>
