@@ -635,3 +635,68 @@ code{
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 .window--contact .contactrow{ grid-template-columns: 64px 1fr; }
+
+/* Window buttons: minimise rolls the window up to its title bar, maximise
+   fills the screen, close hides it until reopened from the taskbar. */
+.winbtn{ cursor:pointer; }
+.winbtn:hover{ border-color:#8a8a8a; }
+.winbtn--close:hover{ border-color:#a05a5a; background: linear-gradient(#6a3d3d, #3d2626); }
+.winbtn:focus-visible, .task:focus-visible{ outline:1px solid #cfcfcf; outline-offset:1px; }
+
+.window.is-min > :not(.titlebar){ display:none; }
+.window.is-min .titlebar{ border-bottom:none; }
+
+.window.is-max{
+  position:fixed;
+  inset:0 0 34px 0;
+  z-index:1000 !important;
+  transform:none !important;
+  overflow:auto;
+  border-radius:0;
+}
+.window.is-max .titlebar{ position:sticky; top:0; z-index:1; cursor:default; }
+body.has-max{ overflow:hidden; }
+
+/* Taskbar */
+.desktop{ padding-bottom:58px; }
+.taskbar{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:1001;
+  height:34px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:0 8px;
+  overflow-x:auto;
+  background: linear-gradient(#3a3a3a, #2a2a2a);
+  border-top:1px solid #4c4c4c;
+  box-shadow: 0 -6px 18px rgba(0,0,0,.45);
+}
+.taskbar[hidden]{ display:none; }
+.task{
+  flex:none;
+  padding:4px 12px;
+  font:inherit;
+  font-size:12px;
+  color:#d7d7d7;
+  border:1px solid #5f5f5f;
+  background: linear-gradient(var(--btnA), var(--btnB));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
+  border-radius:2px;
+  cursor:pointer;
+}
+.task:hover{ border-color:#8a8a8a; }
+.task--active{
+  color:#fff;
+  border-color:#8a8a8a;
+  background: linear-gradient(#2a2a2a, #333333);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.6);
+}
+.task--closed{ color:#8a8a8a; border-style:dashed; }
+
+/* Bio rows under the profile */
+.bio{ margin-top:10px; }
+.window--profile .contactrow{ grid-template-columns: 76px 1fr; line-height:1.35; }
