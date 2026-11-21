@@ -700,3 +700,28 @@ body.has-max{ overflow:hidden; }
 /* Bio rows under the profile */
 .bio{ margin-top:10px; }
 .window--profile .contactrow{ grid-template-columns: 76px 1fr; line-height:1.35; }
+
+/* Photo carousel: three slides across (two, then one, on smaller screens),
+   scroll-snapped. carousel.js adds the Prev/Next bar. */
+.strip{
+  --per:3;
+  position:relative;
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+}
+.strip::-webkit-scrollbar{ display:none; }
+.strip > .thumb{
+  flex:0 0 calc((100% - (var(--per) - 1) * 12px) / var(--per));
+  scroll-snap-align:start;
+}
+.strip .thumb--photo .thumb__img{
+  height:auto;
+  aspect-ratio:3 / 2;
+  object-fit:cover;
+}
+.carousel__bar[hidden]{ display:none; }
+@media (max-width: 900px){ .strip{ --per:2; } }
+@media (max-width: 560px){ .strip{ --per:1; } }
