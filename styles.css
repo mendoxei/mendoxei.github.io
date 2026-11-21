@@ -64,8 +64,13 @@ body{
 .window--contact{ grid-column:1; grid-row:2; }
 .window--games{ grid-column:2; grid-row:1 / span 2; }
 
+.window{ transition: box-shadow .15s ease, border-color .15s ease; }
 .window.is-dragging{
+  border-color:#5c9fe6;
   box-shadow:
+    0 0 0 1px rgba(92,159,230,.55),
+    0 0 14px rgba(92,159,230,.55),
+    0 0 32px rgba(92,159,230,.3),
     0 26px 60px rgba(0,0,0,.75),
     inset 0 1px 0 rgba(255,255,255,.06);
 }
