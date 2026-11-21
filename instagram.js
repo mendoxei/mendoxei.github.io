@@ -26,8 +26,7 @@ var INSTAGRAM_POSTS = [
 
   var posts = INSTAGRAM_POSTS.filter(Boolean);
   if (!posts.length) {
-    section.hidden = true;
-    if (section.previousElementSibling) section.previousElementSibling.hidden = true;
+    (section.closest("[data-window]") || section).hidden = true;
     return;
   }
 

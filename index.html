@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="site.js" defer></script>
     <script src="instagram.js" defer></script>
+    <script src="windows.js" defer></script>
   </head>
 
   <body>
-    <div class="page">
-      <div class="window" role="application" aria-label="Portfolio window">
+    <main class="desktop" id="desktop">
+      <div class="window window--profile" data-window>
         <header class="titlebar">
           <div class="titlebar__left">
             <div class="icon" aria-hidden="true"></div>
@@ -98,8 +99,24 @@
             </div>
           </section>
 
-          <hr class="rule" />
+        </div>
+      </div>
 
+      <div class="window window--games" data-window>
+        <header class="titlebar">
+          <div class="titlebar__left">
+            <div class="icon" aria-hidden="true"></div>
+            <div class="title">Games</div>
+          </div>
+          <div class="titlebar__right" aria-hidden="true">
+            <button class="winbtn" type="button" tabindex="-1">—</button>
+            <button class="winbtn" type="button" tabindex="-1">□</button>
+            <button class="winbtn winbtn--close" type="button" tabindex="-1">
+              ×
+            </button>
+          </div>
+        </header>
+        <div class="content">
           <section class="section" id="games">
             <header class="section__head">
               <h2 id="games-featured">Games</h2>
@@ -223,8 +240,24 @@
             <div class="subanchors" id="games-tools"></div>
           </section>
 
-          <hr class="rule" />
+        </div>
+      </div>
 
+      <div class="window window--pixel" data-window>
+        <header class="titlebar">
+          <div class="titlebar__left">
+            <div class="icon" aria-hidden="true"></div>
+            <div class="title">Pixel Art</div>
+          </div>
+          <div class="titlebar__right" aria-hidden="true">
+            <button class="winbtn" type="button" tabindex="-1">—</button>
+            <button class="winbtn" type="button" tabindex="-1">□</button>
+            <button class="winbtn winbtn--close" type="button" tabindex="-1">
+              ×
+            </button>
+          </div>
+        </header>
+        <div class="content">
           <section class="section" id="pixel-art">
             <header class="section__head">
               <h2>Pixel Art</h2>
@@ -275,8 +308,24 @@
             </div>
           </section>
 
-          <hr class="rule" />
+        </div>
+      </div>
 
+      <div class="window window--photos" data-window>
+        <header class="titlebar">
+          <div class="titlebar__left">
+            <div class="icon" aria-hidden="true"></div>
+            <div class="title">Photos</div>
+          </div>
+          <div class="titlebar__right" aria-hidden="true">
+            <button class="winbtn" type="button" tabindex="-1">—</button>
+            <button class="winbtn" type="button" tabindex="-1">□</button>
+            <button class="winbtn winbtn--close" type="button" tabindex="-1">
+              ×
+            </button>
+          </div>
+        </header>
+        <div class="content">
           <section class="section" id="photos">
             <header class="section__head">
               <h2>Photos</h2>
@@ -325,10 +374,26 @@
             </div>
           </section>
 
-          <!-- Instagram carousel, hidden for now. Uncomment to show; the posts
-               are listed at the top of instagram.js.
-          <hr class="rule" />
+        </div>
+      </div>
 
+      <!-- Instagram carousel, hidden for now. Uncomment to show; the posts
+               are listed at the top of instagram.js.
+      <div class="window window--instagram" data-window>
+        <header class="titlebar">
+          <div class="titlebar__left">
+            <div class="icon" aria-hidden="true"></div>
+            <div class="title">Instagram</div>
+          </div>
+          <div class="titlebar__right" aria-hidden="true">
+            <button class="winbtn" type="button" tabindex="-1">—</button>
+            <button class="winbtn" type="button" tabindex="-1">□</button>
+            <button class="winbtn winbtn--close" type="button" tabindex="-1">
+              ×
+            </button>
+          </div>
+        </header>
+        <div class="content">
           <section class="section" id="instagram">
             <header class="section__head">
               <h2>Instagram</h2>
@@ -356,11 +421,27 @@
               </div>
             </div>
           </section>
-          -->
+        </div>
+      </div>
+      -->
 
-          <hr class="rule" />
-
-          <!-- <section class="section" id="about">
+      <!--
+      <div class="window window--about" data-window>
+        <header class="titlebar">
+          <div class="titlebar__left">
+            <div class="icon" aria-hidden="true"></div>
+            <div class="title">About</div>
+          </div>
+          <div class="titlebar__right" aria-hidden="true">
+            <button class="winbtn" type="button" tabindex="-1">—</button>
+            <button class="winbtn" type="button" tabindex="-1">□</button>
+            <button class="winbtn winbtn--close" type="button" tabindex="-1">
+              ×
+            </button>
+          </div>
+        </header>
+        <div class="content">
+          <section class="section" id="about">
             <header class="section__head">
               <h2>About</h2>
             </header>
@@ -386,10 +467,26 @@
                 </li>
               </ul>
             </div>
-          </section> -->
+          </section>
+        </div>
+      </div>
+      -->
 
-          <hr class="rule" />
-
+      <div class="window window--contact" data-window>
+        <header class="titlebar">
+          <div class="titlebar__left">
+            <div class="icon" aria-hidden="true"></div>
+            <div class="title">Contact</div>
+          </div>
+          <div class="titlebar__right" aria-hidden="true">
+            <button class="winbtn" type="button" tabindex="-1">—</button>
+            <button class="winbtn" type="button" tabindex="-1">□</button>
+            <button class="winbtn winbtn--close" type="button" tabindex="-1">
+              ×
+            </button>
+          </div>
+        </header>
+        <div class="content">
           <section class="section" id="contact">
             <header class="section__head">
               <h2>Contact</h2>
@@ -417,15 +514,15 @@
                     <a class="link" href="https://github.com/mendoxei"
                       >GitHub</a
                     >
-                    <span class="sep">•</span>
+                    <span class="sep">|</span>
                     <a class="link" href="https://mendoxei.itch.io/"
                       >itch.io</a
                     >
-                    <span class="sep">•</span>
+                    <span class="sep">|</span>
                     <a class="link" href="https://500px.com/p/mendoxei"
                       >500px</a
                     >
-                    <span class="sep">•</span>
+                    <span class="sep">|</span>
                     <a class="link" href="https://www.instagram.com/invitori/"
                       >Instagram</a
                     >
@@ -435,13 +532,13 @@
 
               <div class="footer">
                 <span>© <span id="year">2026</span> mendoxei</span>
-                <span class="sep">•</span>
+                <span class="sep">|</span>
                 <span class="muted">Made for GitHub Pages</span>
               </div>
             </div>
           </section>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

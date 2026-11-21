@@ -31,19 +31,27 @@ body{
   font-family: Tahoma, Verdana, Arial, sans-serif;
   color:var(--text);
   background:
-    radial-gradient(900px 520px at 30% 15%, #2a2a2a 0%, #141414 60%, #0c0c0c 100%);
+    #0c0c0c
+    radial-gradient(900px 520px at 30% 15%, #2a2a2a 0%, #141414 60%, #0c0c0c 100%)
+    no-repeat fixed;
 }
 
-/* Centre the window */
-.page{
-  min-height:100%;
+/* Desktop: one window per section, laid out on a grid and draggable
+   (windows.js) by their title bars. */
+.desktop{
   display:grid;
-  place-items:center;
-  padding:24px;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-rows: auto 1fr;
+  gap:20px;
+  align-items:start;
+  align-content:start;
+  padding:24px max(24px, calc((100% - 1100px) / 2));
+  overflow:clip;
 }
 
 .window{
-  width:min(980px, 96vw);
+  position:relative;
+  grid-column:1 / -1;
   border:1px solid #2a2a2a;
   background: linear-gradient(var(--winA), var(--winB));
   border-radius:2px;
@@ -51,6 +59,28 @@ body{
   box-shadow:
     0 18px 44px rgba(0,0,0,.6),
     inset 0 1px 0 rgba(255,255,255,.06);
+}
+.window--profile{ grid-column:1; grid-row:1; }
+.window--contact{ grid-column:1; grid-row:2; }
+.window--games{ grid-column:2; grid-row:1 / span 2; }
+
+.window.is-dragging{
+  box-shadow:
+    0 26px 60px rgba(0,0,0,.75),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+.desktop--live .window:not(.is-active) .titlebar{
+  background: linear-gradient(#3d3d3d, #2f2f2f);
+}
+.desktop--live .window:not(.is-active) .title{ color:#a4a4a4; }
+
+@media (min-width: 901px){
+  .desktop--live .titlebar{
+    cursor:grab;
+    user-select:none;
+    touch-action:none;
+  }
+  .desktop--live .is-dragging .titlebar{ cursor:grabbing; }
 }
 
 /* Title bar */
@@ -71,6 +101,7 @@ body{
 }
 
 .icon{
+  display:none; /* hidden for now; remove this line to show it again */
   width:18px;
   height:18px;
   border:1px solid var(--lineLight);
@@ -464,6 +495,13 @@ code{
 /* Responsive */
 @media (max-width: 900px){
   .grid, .thumbs{ grid-template-columns: 1fr; }
+  .desktop{
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    padding:12px;
+    gap:12px;
+  }
+  .window{ grid-column:1; grid-row:auto; transform:none !important; }
 }
 
 @media (max-width: 560px){
@@ -581,3 +619,19 @@ code{
   font-size:13px;
 }
 .carousel__count{ min-width:48px; text-align:center; }
+
+/* Section windows: the title bar names the section, so the in-content
+   heading is kept for screen readers only. */
+.window .section__head{ justify-content:flex-end; min-height:0; }
+.window .section__head h2{
+  position:absolute;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip-path:inset(50%);
+  white-space:nowrap;
+}
+.window--games .grid{
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.window--contact .contactrow{ grid-template-columns: 64px 1fr; }
