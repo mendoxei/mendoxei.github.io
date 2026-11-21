@@ -355,7 +355,7 @@
               </div>
             </header>
 
-            <div class="thumbs">
+            <div class="thumbs strip" data-carousel aria-label="Pixel art">
               <figure class="thumb" id="pixel-A">
                 <!-- <div class="thumb__img" aria-hidden="true"></div> -->
                 <img
@@ -443,6 +443,8 @@
               </div>
             </header>
 
+            <!-- Order: figures with data-priority come first, lowest number
+                 first; the rest follow in the order written here. -->
             <div class="thumbs strip" data-carousel aria-label="Photos">
               <figure class="thumb thumb--photo">
                 <a href="https://500px.com/photo/wnY7zoh0IcV">
@@ -468,7 +470,7 @@
                 <figcaption>Fyor</figcaption>
               </figure>
 
-              <figure class="thumb thumb--photo">
+              <figure class="thumb thumb--photo" data-priority="1">
                 <a href="https://500px.com/photo/rypjyRhvf4Q">
                   <img
                     class="thumb__img"
@@ -492,7 +494,7 @@
                 <figcaption>Melting snow at sunset</figcaption>
               </figure>
 
-              <figure class="thumb thumb--photo">
+              <figure class="thumb thumb--photo" data-priority="2">
                 <a href="assets/photos/dsc-7900.jpg">
                   <img
                     class="thumb__img"

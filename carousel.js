@@ -3,6 +3,20 @@
 (function () {
   document.querySelectorAll("[data-carousel]").forEach(function (strip) {
     var slides = Array.prototype.slice.call(strip.children);
+
+    // Slides with data-priority go first (lowest number first); the rest
+    // keep their order in the HTML.
+    function priority(el) {
+      var p = parseFloat(el.getAttribute("data-priority"));
+      return isNaN(p) ? Infinity : p;
+    }
+    slides = slides
+      .map(function (el, i) { return { el: el, i: i, p: priority(el) }; })
+      .sort(function (a, b) { return a.p === b.p ? a.i - b.i : a.p < b.p ? -1 : 1; })
+      .map(function (o) { return o.el; });
+    slides.forEach(function (el) { strip.appendChild(el); });
+    strip.scrollLeft = 0;
+
     if (slides.length < 2) return;
 
     var bar = document.createElement("div");
